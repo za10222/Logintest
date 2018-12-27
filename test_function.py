@@ -26,11 +26,11 @@ class Functiontest(unittest.TestCase):
         self.id1 = 'mercury'
         self.pw = 'mercury'
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.set_headless()
-        chrome_options.add_argument('--disable-gpu')
+        # chrome_options.set_headless()
+        # chrome_options.add_argument('--disable-gpu')
         self.driver= webdriver.Chrome(chrome_options=chrome_options)
-        self.driver.implicitly_wait(10)
-
+        self.driver.implicitly_wait(1)
+        self.driver.set_page_load_timeout(10)
     # 输入已注册的用户名和不正确的密码，验证是否成功，
     # @unittest.skip('no')
     def test_case2(self):

@@ -24,11 +24,11 @@ class Securitytest(unittest.TestCase):
         self.pw = 'mercury'
         chrome_options = webdriver.ChromeOptions()
 
-        chrome_options.set_headless()
-        chrome_options.add_argument('--disable-gpu')
+        # chrome_options.set_headless()
+        # chrome_options.add_argument('--disable-gpu')
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
-        self.driver.implicitly_wait(10)
-
+        self.driver.implicitly_wait(1)
+        self.driver.set_page_load_timeout(10)
     def tearDown(self):
         self.driver.quit()
 
@@ -109,7 +109,7 @@ class Securitytest(unittest.TestCase):
                 }
         session = requests.Session()
         try:
-            for i in range(20):
+            for i in range(10):
                 data["password"]=generate_random_str(6)
                 session.post("http://newtours.demoaut.com/login.php",data)
             self.driver.delete_all_cookies()
