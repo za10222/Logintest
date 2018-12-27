@@ -29,7 +29,7 @@ class Functiontest(unittest.TestCase):
         # chrome_options.set_headless()
         # chrome_options.add_argument('--disable-gpu')
         self.driver= webdriver.Chrome(chrome_options=chrome_options)
-        self.driver.implicitly_wait(1)
+        self.driver.implicitly_wait(5)
         self.driver.set_page_load_timeout(10)
     # 输入已注册的用户名和不正确的密码，验证是否成功，
     # @unittest.skip('no')

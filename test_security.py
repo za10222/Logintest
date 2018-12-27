@@ -27,7 +27,7 @@ class Securitytest(unittest.TestCase):
         # chrome_options.set_headless()
         # chrome_options.add_argument('--disable-gpu')
         self.driver = webdriver.Chrome(chrome_options=chrome_options)
-        self.driver.implicitly_wait(1)
+        self.driver.implicitly_wait(5)
         self.driver.set_page_load_timeout(10)
     def tearDown(self):
         self.driver.quit()
